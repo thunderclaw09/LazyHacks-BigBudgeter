@@ -2,6 +2,8 @@ var weeklySalary = 0.0;
 var weeklyExpenses = 0.0;
 var currentMoney = 0.0;
 var moneyGoal = 100.0;
+var addAmount = 0;
+var removeAmount = 0;
 
 
 const fs = require("fs");
@@ -108,16 +110,65 @@ function howFarUntilGoal()
     console.log("You will achieve this in this many weeks:");
     console.log(weeks);
     return weeks;
+
 }
 
+let currentMoneyInput = document.getElementById("amount").value;
+console.log(currentMoneyInput);
 
 
+const xValues = [0, weeks];
+const yValues = [currentMoney, moneyGoal];
+
+new Chart("myChart", {
+    type: "line",
+    data: {
+    labels: xValues,
+    datasets: [{
+        backgroundColor:"rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: yValues
+    }]
+  }
+});
 
 ////////////////////// CONNECTING TO HTML //////////////////////
-var input1  = document.getElementById("amount");
+var header  = document.getElementById("amount");;
 
+// function testFunction()
+// {
+//     console.log("Hello world!")
+// }
 
-function testFunction()
+// function submitGoal()
+// {
+//     let textBox = document.getElementById("moneyGoal");
+//     moneyGoal = textBox.value;
+//     console.log(moneyGoal);
+    
+// }
+function submit(textBoxID, inputVariable)
 {
-    console.log
+    let textBox = document.getElementById(textBoxID);
+    console.log(textBox.value);
+
+    if (inputVariable == "currentMoney")
+    {
+        currentMoney = textBox.value;
+    }else if (inputVariable == "weeklySalary")
+    {
+        weeklySalary = textBox.value;
+    }else if (inputVariable == "weeklyExpenses")
+    {
+        weeklyExpenses = textBox.value;
+    }else if (inputVariable == "moneyGoal")
+    {
+        moneyGoal = textBox.value;
+    }else if (inputVariable == "addAmount")
+    {
+        addAmount = textBox.value;
+    }else if (inputVariable == "removeAmount")
+    {
+        removeAmount = textBox.value;
+    }
 }

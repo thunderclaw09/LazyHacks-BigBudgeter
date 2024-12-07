@@ -5,9 +5,16 @@ body{
  
  body {
    margin: 0;
-   padding: 0;
+   padding: 20;
    font-family: Arial, sans-serif;
  }
+ body {
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+
+}
 
  .topnav {
    background-color: lightblue;
