@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<div class="topnav">
+<a href="#why" > Why budget?</a> 
+<a href="#Spendings"> Go to spendings</a>
+<a href="#plan"> Your curent budget plan</a>
+</div>
+
+<br>
+
+<section style="background-color: lightblue; color: navy;">
+<h1 style="color:navy;font-family: 'Courier New', monospace;"> The Big Budgeter </h1>
+<h3> Makes all of your money problems go away!</h3>
+</section>
+
+<h1 style="color:navy;font-family: 'Courier New', monospace;" id="why"> Why do we budget?</h1>
+<h4> Have problems scraping up the cash to for clothing, or university? The Big Budgeter works to compile, and put your budget plan ino perspective.</h4>
+
+#budget
+<section style="background-color: lightblue; color: navy;">
+    <h1 style="color:navy;font-family: 'Courier New', monospace;" id="Spendings"> Spendings include...</h1>
+    <button type="button" onclick="showPopup('School Tuition')">School tuition</button>
+    <li><strong> Entertainment (your monthly Tim Horton's, or Nintendo)</strong></li>
+    <li><strong>Food</strong>  </li>
+    <li> <strong>Clothing </strong></li>
+    <li><strong>Housing</strong> </li>
+    <li><strong> Healthcare</strong></li>
+    <li><strong> Other?</strong></li>
+    </section>
+
+    <div id="popup">
+      <h3 id="popupCategory"></h3>
+      <label for="amount">Enter amount to allocate:</label>
+      <input type="number" id="amount" placeholder="Amount in dollars">
+      <br>
+      <button onclick="saveBudget()">Save</button>
+      <button onclick="closePopup()">Cancel</button>
+    </div>
+
+
+<h1 style="color:navy;font-family: 'Courier New', monospace;" id="plan"> Your current budget plan</h1>
+<h4> Here's where your funds are at play.</h4>
+
+#current budget
