@@ -114,4 +114,4 @@ function howFarUntilGoal()
 
 
 ////////////////////// CONNECTING TO HTML //////////////////////
-var input1  = document.getElementById("myText");
+//var input1  = document.getElementById("myText");
