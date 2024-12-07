@@ -6,7 +6,7 @@ var addAmount = 0;
 var removeAmount = 0;
 
 
-const fs = require("fs");
+const fs = require("fs"); // this is now useless, along with the json file, because require() is not defined on browser side javascirpt
 const { start } = require("repl");
 
 //  DONE ON STARTUP???
@@ -81,6 +81,7 @@ function lostMoney(amount)
 {
     currentMoney = currentMoney - amount;
     initialization(currentMoney, weeklySalary, weeklyExpenses, moneyGoal);
+    startup();
 }
 
 // weekly update of money. Triggered by a button press each saturday? THIS IS IMPORTANT TO GENERATE THE SAVINGS GRAPH
@@ -116,11 +117,13 @@ function howFarUntilGoal()
 let currentMoneyInput = document.getElementById("amount").value;
 console.log(currentMoneyInput);
 
-
+var weeks = howFarUntilGoal();
 const xValues = [0, weeks];
 const yValues = [currentMoney, moneyGoal];
 
-new Chart("myChart", {
+const ctx = document.getElementById('myChart').getContext('2d');
+
+new Chart(ctx, {
     type: "line",
     data: {
     labels: xValues,
@@ -133,20 +136,17 @@ new Chart("myChart", {
 });
 
 ////////////////////// CONNECTING TO HTML //////////////////////
-var header  = document.getElementById("amount");;
 
-// function testFunction()
-// {
-//     console.log("Hello world!")
-// }
+function CheckPlan()
+{
+    const header  = document.getElementById("weeksUntil");;
+    header.innerHTML = "Weeks until you reach your goal:" + howFarUntilGoal().toString();
+    initialization();
+    startup();
+}
 
-// function submitGoal()
-// {
-//     let textBox = document.getElementById("moneyGoal");
-//     moneyGoal = textBox.value;
-//     console.log(moneyGoal);
-    
-// }
+
+
 function submit(textBoxID, inputVariable)
 {
     let textBox = document.getElementById(textBoxID);
@@ -171,4 +171,8 @@ function submit(textBoxID, inputVariable)
     {
         removeAmount = textBox.value;
     }
+
+    initialization(currentMoney, weeklySalary, weeklyExpenses, moneyGoal);
+    
+
 }

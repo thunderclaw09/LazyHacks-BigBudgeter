@@ -3,9 +3,8 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <script src="algorithm.js"></script> 
-  <script
-src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <div class="topnav">
 <a href="#why" > Why budget?</a> 
@@ -13,9 +12,6 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <a href="#plan"> Your curent budget plan</a>
 </div>
 
-<br>
-
-<br>
 
 <section style="background-color: lightblue; color: navy;">
 <h1 style="color:navy;font-family: 'Courier New', monospace;"> The Big Budgeter </h1>
@@ -50,7 +46,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
       <h3 id="popupCategory"></h3>
       <label for="amount" style="color:navy;font-family: 'Courier New', monospace;">Enter your expenses:</label>
       <br>
-      <input type="number" id="moneyGoal" placeholder="Amount in dollars">
+      <input type="number" id="moneyGoal" placeholder="Your Savings Goal">
       
       <button type="button" onclick="submit('moneyGoal', 'moneyGoal')">Save</button>
       
@@ -77,9 +73,24 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 
 <section style="background-color: lightblue; color: navy;">
 <h1 style="color:navy;font-family: 'Courier New', monospace;" id="plan"> Your current budget plan</h1>
+<div style="float: right; margin-left: 20px;">
+ 
+  <button type="button" onclick="CheckPlan()"> Check plan. </button>
+  </div>
+
 <h4> Here's where your funds are at play.</h4>
 
-<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+<h4 id="weeksUntil">Weeks until you reach your goal:</h4> 
+
+
+<div style="float: center 20px;">
+  <img src="coins.gif" alt="Frog" width="200" height="300" float >
+  </div>
+
+
+
+<div><canvas id="myChart" style="width:100%;max-width:700px"></canvas></div>
 
 </section>
 #current budget
