@@ -14,7 +14,7 @@ function initialization(money, salary, expenses, goal) // because this overrides
         currentMoney: money, 
         weeklySalary: salary,
         weeklyExpenses: expenses,
-        goal: moneyGoal
+        moneyGoal: goal
     }
 
     
@@ -58,7 +58,7 @@ function startup() // read data from the file
         currentMoney = theData.currentMoney;
         weeklySalary = theData.weeklySalary;
         weeklyExpenses = theData.weeklyExpenses;
-        moneyGoal = theData.goal;
+        moneyGoal = theData.moneyGoal;
 
         ////////////////////////// put a callback here if you want to do anything further (for testing purposes) ////////////////////////////////////////////
 
