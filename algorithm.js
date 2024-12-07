@@ -1,22 +1,20 @@
 var weeklySalary = 0.0;
 var weeklyExpenses = 0.0;
 var currentMoney = 0.0;
-//var week = 0;
+var moneyGoal = 100.0;
 
-// const date = new Date();
-// let currentDay = date.getDate();
-// let currentMonth = date.getMonth();
-// let currentYear = date.getFullYear()
+
 const fs = require("fs");
 const { start } = require("repl");
 
 //  DONE ON STARTUP???
-function initialization(money, salary, expenses) // because this overrides the file, this should only be done once. 
+function initialization(money, salary, expenses, goal) // because this overrides the file, this should only be done once. 
 {
     const initValues = {
         currentMoney: money, 
         weeklySalary: salary,
-        weeklyExpenses: expenses
+        weeklyExpenses: expenses,
+        goal: moneyGoal
     }
 
     
@@ -60,6 +58,7 @@ function startup() // read data from the file
         currentMoney = theData.currentMoney;
         weeklySalary = theData.weeklySalary;
         weeklyExpenses = theData.weeklyExpenses;
+        moneyGoal = theData.goal;
 
         //put a callback here if you want to do anything further
       });    
@@ -81,7 +80,7 @@ function lostMoney(amount)
 function updateMoney()
 {
     currentMoney = currentMoney + weeklySalary - weeklyExpenses;
-    initialization(currentMoney, weeklySalary, weeklyExpenses);
+    initialization(currentMoney, weeklySalary, weeklyExpenses, moneyGoal);
     startup();
     
 }
@@ -92,10 +91,17 @@ startup();
 
 
 
-
 ////////////////////////////////// ALGORITHMS ///////////////////////////////
 
 
+function howFarUntilGoal()
+{
+    var difference = moneyGoal - currentMoney;    
+    var weeks = Math.ceil(difference / weeklySalary);
 
+    console.log("You will achieve this in this many weeks:");
+    console.log(weeks);
+    return weeks;
+}
 
 
