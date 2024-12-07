@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" href="styles.css">
+  <script src="algorithm.js"></script> 
 </head>
 <div class="topnav">
 <a href="#why" > Why budget?</a> 
@@ -9,6 +10,8 @@
 <a href="#plan"> Your curent budget plan</a>
 </div>
 
+<br>
+<img src="froggy.png" alt="Frog" width="500" height="600">
 <br>
 
 <section style="background-color: lightblue; color: navy;">
@@ -35,26 +38,28 @@
     <div id="popup">
       <h3 id="popupCategory"></h3>
       <label for="amount" style="color:navy;font-family: 'Courier New', monospace;">Enter your expenses:</label>
-     
+      <br>
       <input type="number" id="amount" placeholder="Amount in dollars">
       <br>
-      <button type="button">Save</button>
+      <button type="button" onclick="testFunction()">Save</button>
       
-        <input type="number" id="amount" placeholder="Weekly Expenses">
+        <input type="number" id="expense" placeholder="Weekly Expenses">
       <br>
       <button type="button">Save</button>
       
-        <input type="number" id="amount" placeholder="Weekly Salary">
+        <input type="number" id="salary" placeholder="Weekly Salary">
       <br>
       <button type="button">Save</button>
       
-        <input type="number" id="amount" placeholder="Current Money">
+        <input type="number" id="Money" placeholder="Current Money">
       <br>
       <button type="button">Save</button>
-      <input type="number" id="amount" placeholder="Add Money">
+      <input type="number" id="addMoney" placeholder="Add Money">
       <br>
       <button type="button">Save</button>
-      
+      <input type="number" id="removeMoney" placeholder="Remove Money">
+      <br>
+      <button type="button">Save</button>
     </div>
     
     
