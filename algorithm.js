@@ -60,7 +60,10 @@ function startup() // read data from the file
         weeklyExpenses = theData.weeklyExpenses;
         moneyGoal = theData.goal;
 
-        //put a callback here if you want to do anything further
+        ////////////////////////// put a callback here if you want to do anything further (for testing purposes) ////////////////////////////////////////////
+
+        //howFarUntilGoal()
+
       });    
 }
 
@@ -69,19 +72,22 @@ function startup() // read data from the file
 function gainedMoney(amount)
 {
     currentMoney = currentMoney + amount;
+    initialization(currentMoney, weeklySalary, weeklyExpenses, moneyGoal);
 }
 
 function lostMoney(amount)
 {
     currentMoney = currentMoney - amount;
+    initialization(currentMoney, weeklySalary, weeklyExpenses, moneyGoal);
 }
 
-// weekly update of money. Triggered by a button press each saturday?
+// weekly update of money. Triggered by a button press each saturday? THIS IS IMPORTANT TO GENERATE THE SAVINGS GRAPH
 function updateMoney()
 {
     currentMoney = currentMoney + weeklySalary - weeklyExpenses;
     initialization(currentMoney, weeklySalary, weeklyExpenses, moneyGoal);
     startup();
+
     
 }
 
@@ -105,3 +111,7 @@ function howFarUntilGoal()
 }
 
 
+
+
+////////////////////// CONNECTING TO HTML //////////////////////
+var input1  = document.getElementById("myText");
